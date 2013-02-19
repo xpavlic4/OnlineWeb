@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+    <persistence-unit name="primary" transaction-type="JTA">
+        <jta-data-source>java:jboss/datasources/OnlineAuthDS</jta-data-source>
+        <class>com.focusmr.online.onlineweb.App</class>
+        <class>com.focusmr.online.onlineweb.Country</class>
+        <class>com.focusmr.online.onlineweb.Param</class>
+        <class>com.focusmr.online.onlineweb.UserTable</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <properties>
+            <!-- Properties for Hibernate -->
+            <property name="hibernate.hbm2ddl.auto" value="validate"/>
+            <property name="hibernate.show_sql" value="false"/>
+            <property name="hibernate.connection.url" value="jdbc:oracle:thin:@oradev:1521:webdb1dev"/>
+            <property name="hibernate.connection.driver_class" value="oracle.jdbc.OracleDriver"/>
+            <property name="hibernate.connection.username" value="online_auth"/>
+            <property name="hibernate.connection.password" value="zgdxzuplq97m"/>
+            <property name="hibernate.format_sql" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>
