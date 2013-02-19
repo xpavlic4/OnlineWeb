@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                template="/WEB-INF/templates/default.xhtml">
+    <ui:define name="content">
+        <h1>Online Web</h1>
+
+        <div>
+            <p>Rest path:</p>
+
+            <h3>#{jaxRsActivator.restVersion}</h3>
+        </div>
+
+
+        <h2>Parameters</h2>
+        <h:panelGroup rendered="#{empty params}">
+            <em>No params.</em>
+        </h:panelGroup>
+        <h:dataTable var="_param" value="#{params}" rendered="#{not empty params}" styleClass="simpletablestyle">
+            <h:column>
+                <f:facet name="header">Id</f:facet>
+                #{_param.paramId}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Name</f:facet>
+                #{_param.paramName}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Display</f:facet>
+                #{_param.displayName}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Comment</f:facet>
+                #{_param.paramComment}
+            </h:column>
+            <!--<f:facet name="footer">-->
+            <!--REST URL for all members: <a href="#{request.contextPath}#{jaxRsActivator.restVersion}/members">/rest/members</a>-->
+            <!--</f:facet>-->
+        </h:dataTable>
+    </ui:define>
+</ui:composition>
