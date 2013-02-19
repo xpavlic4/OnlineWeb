@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>com.focusmr.online</groupId>
-    <artifactId>jpa</artifactId>
+    <artifactId>OnlineWebJpa</artifactId>
 
     <dependencies>
         <!-- Import the JPA API, we use provided scope as the API is included in JBoss AS 7 -->
