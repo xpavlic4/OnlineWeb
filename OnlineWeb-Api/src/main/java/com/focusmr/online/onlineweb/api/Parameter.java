@@ -9,6 +9,11 @@ public class Parameter implements Serializable {
     private String key;
     private String value;
 
+    public Parameter(String aName, String param) {
+        setKey(aName);
+        setValue(param);
+    }
+
     public String getKey() {
         return key;
     }
