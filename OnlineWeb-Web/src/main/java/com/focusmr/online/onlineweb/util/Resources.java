@@ -22,7 +22,7 @@ import java.util.logging.Logger;
  */
 @SuppressWarnings("UnusedDeclaration")
 public class Resources {
-    // use @SuppressWarnings to tell IDE to ignore warnings about field not being referenced directly
+    //    use @SuppressWarnings to tell IDE to ignore warnings about field not being referenced directly
     @SuppressWarnings("unused")
     @Produces
     @PersistenceContext

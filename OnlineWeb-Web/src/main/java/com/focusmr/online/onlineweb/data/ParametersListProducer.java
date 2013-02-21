@@ -1,6 +1,6 @@
 package com.focusmr.online.onlineweb.data;
 
-import com.focusmr.online.onlineweb.Param;
+import com.focusmr.online.onlineweb.model.Param;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
