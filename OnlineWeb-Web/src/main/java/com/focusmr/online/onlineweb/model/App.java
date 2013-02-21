@@ -1,13 +1,15 @@
-package com.focusmr.online.onlineweb;
+package com.focusmr.online.onlineweb.model;
 
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * App entity.
  */
 @Entity
+@XmlRootElement
 public class App {
     private int appId;
 
@@ -67,4 +69,5 @@ public class App {
         result = 31 * result + (displayName != null ? displayName.hashCode() : 0);
         return result;
     }
+
 }

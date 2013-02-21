@@ -1,14 +1,16 @@
-package com.focusmr.online.onlineweb;
+package com.focusmr.online.onlineweb.model;
 
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- * UserTable entity.
+ * com.focusmr.online.onlineweb.model.UserTable entity.
  */
-@javax.persistence.Table(name = "USER_TABLE", schema = "ONLINE_AUTH", catalog = "")
+@javax.persistence.Table(name = "USER_TABLE", schema = "ONLINE_AUTH")
 @Entity
+@XmlRootElement
 public class UserTable {
     private int userId;
 

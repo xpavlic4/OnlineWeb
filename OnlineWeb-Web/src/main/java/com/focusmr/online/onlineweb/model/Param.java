@@ -1,13 +1,13 @@
-package com.focusmr.online.onlineweb;
+package com.focusmr.online.onlineweb.model;
 
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlRootElement;
 
-/**
- * Param entity.
- */
+
 @Entity
+@XmlRootElement
 public class Param {
     private int paramId;
 
