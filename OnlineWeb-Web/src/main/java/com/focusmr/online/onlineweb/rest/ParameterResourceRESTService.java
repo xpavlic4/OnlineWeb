@@ -5,7 +5,8 @@ import com.focusmr.online.onlineweb.model.App;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
-import javax.persistence.*;
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -25,12 +26,6 @@ public class ParameterResourceRESTService {
     @Inject
     private EntityManager em;
 
-    @PersistenceContext
-    private EntityManager em3;
-
-    @PersistenceUnit(unitName = "primary")
-    private EntityManagerFactory entityManagerFactory;
-
     @GET
     @Path("/params")
     @Produces(MediaType.TEXT_XML)
@@ -41,7 +36,7 @@ public class ParameterResourceRESTService {
 
     @GET
     @Path("/params/{name}")
-    @Produces("text/xml")
+    @Produces(MediaType.TEXT_XML)
     public List<App> lookupMemberById(@PathParam("name") long name) {
 
         final TypedQuery<App> query = em.createQuery("select a from App a", App.class);

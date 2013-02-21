@@ -3,6 +3,7 @@ package com.focusmr.online.onlineweb.model;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -10,7 +11,9 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @Entity
 @XmlRootElement
+@NamedQuery(name = App.APP_BYNAME, query = "select a from App a where a.appName = :name")
 public class App {
+    public static final String APP_BYNAME = "App.byName";
     private int appId;
 
     @javax.persistence.Column(name = "APP_ID")
