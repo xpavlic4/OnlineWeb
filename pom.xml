@@ -7,9 +7,8 @@
     <artifactId>OnlineWeb</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
-        <module>api</module>
-        <module>web</module>
-        <module>jpa</module>
+        <module>OnlineWeb-Api</module>
+        <module>OnlineWeb-Web</module>
     </modules>
     <packaging>pom</packaging>
     <properties>
@@ -21,6 +20,13 @@
         <!-- Define the version of JBoss' Java EE 6 APIs and Tools we want
             to import. -->
         <jboss.bom.version>1.0.0.Final</jboss.bom.version>
+        <!-- Alternatively, comment out the above line, and un-comment the line below to
+        use version 3.0.0.Beta1-redhat-1 which is a release certified
+        to work with JBoss EAP 6. It requires you have access to the JBoss EAP 6 maven repository. -->
+        <!--
+        <javaee6.spec.version>3.0.0.Beta1-redhat-1</javaee6.spec.version>
+        -->
+        <org.richfaces.bom.version>4.1.0.Final</org.richfaces.bom.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -40,11 +46,11 @@
                 <scope>import</scope>
             </dependency>
             <dependency>
-                <groupId>org.jboss.bom</groupId>
-                <artifactId>jboss-javaee-6.0-with-hibernate</artifactId>
-                <version>${jboss.bom.version}</version>
-                <type>pom</type>
+                <groupId>org.richfaces</groupId>
+                <artifactId>richfaces-bom</artifactId>
+                <version>${org.richfaces.bom.version}</version>
                 <scope>import</scope>
+                <type>pom</type>
             </dependency>
         </dependencies>
     </dependencyManagement>
