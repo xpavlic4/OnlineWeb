@@ -6,16 +6,20 @@ import com.focusmr.online.onlineweb.model.UserTable;
 import com.focusmr.online.userdb.PrefsBase;
 import com.focusmr.online.userdb.ReadParam;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.naming.NamingException;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 import java.sql.SQLException;
 
 /**
  * Resolves value of given param.
  */
+@ApplicationScoped
 public class ParamResolver {
+    private final JavaConnectionFactory factory = new JavaConnectionFactory();
     @Inject
     EntityManager em;
 
@@ -29,7 +33,7 @@ public class ParamResolver {
      */
     public Parameter process(ParamQueryObject o) throws SQLException, NamingException {
         Integer masterId = findMasterId(o);
-        final PrefsBase prefsBase = new PrefsBase(o.getUserId(), masterId, o.getApplicatoinId(), o.getCountryId(), new JavaConnectionFactory());
+        final PrefsBase prefsBase = new PrefsBase(o.getUserId(), masterId, o.getApplicatoinId(), o.getCountryId(), factory);
         final ReadParam param = prefsBase.getParam(o.getName());
         final Parameter parameter = new Parameter();
         parameter.setKey(o.getName());
@@ -46,7 +50,13 @@ public class ParamResolver {
     private Integer findMasterId(ParamQueryObject o) {
         final TypedQuery<UserTable> namedQuery = em.createNamedQuery(UserTable.USER_BYID, UserTable.class);
         namedQuery.setParameter("id", o.getUserId());
-        @SuppressWarnings("UnnecessaryLocalVariable") final Integer belongsTo = namedQuery.getSingleResult().getBelongsTo();
+        final UserTable singleResult;
+        try {
+            singleResult = namedQuery.getSingleResult();
+        } catch (NoResultException e) {
+            return null;
+        }
+        @SuppressWarnings("UnnecessaryLocalVariable") final Integer belongsTo = singleResult.getBelongsTo();
         return belongsTo;
 
     }

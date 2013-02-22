@@ -5,6 +5,7 @@ import com.focusmr.online.onlineweb.logic.ParamQueryObject;
 import com.focusmr.online.onlineweb.logic.ParamResolver;
 
 import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import javax.naming.NamingException;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -20,6 +21,9 @@ import java.sql.SQLException;
 @RequestScoped
 public class ParameterResourceRESTService {
 
+    @Inject
+    private ParamResolver resolver;
+
     @GET
     @Path("/params/{name}")
     @Produces(MediaType.TEXT_XML)
@@ -33,7 +37,7 @@ public class ParameterResourceRESTService {
         final int countryId = Integer.parseInt(aCountry);
 
         ParamQueryObject o = ParamQueryObject.builder().userId(userId).applicationId(applicationId).countryId(countryId).name(aName).build();
-        return new ParamResolver().process(o);
+        return resolver.process(o);
     }
 
 
