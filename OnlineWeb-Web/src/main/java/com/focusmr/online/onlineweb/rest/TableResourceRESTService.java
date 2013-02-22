@@ -12,10 +12,7 @@ import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
@@ -91,7 +88,7 @@ public class TableResourceRESTService {
     @GET
     @Path("/usertable")
     @Produces(MediaType.TEXT_XML)
-    public List<UserTable> listAllUsers() {
+    public List<UserTable> listAllUsers(@QueryParam("offset") int offset) {
         final CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
         final CriteriaQuery<UserTable> criteria = criteriaBuilder.createQuery(UserTable.class);
         final Root<UserTable> appRoot = criteria.from(UserTable.class);
@@ -99,6 +96,9 @@ public class TableResourceRESTService {
         criteria.orderBy(criteriaBuilder.asc(appRoot.get("userId")));
         final TypedQuery<UserTable> query = em.createQuery(criteria);
         query.setMaxResults(10);
+        if (offset != 0) {
+            query.setFirstResult(offset);
+        }
         return query.getResultList();
     }
 
