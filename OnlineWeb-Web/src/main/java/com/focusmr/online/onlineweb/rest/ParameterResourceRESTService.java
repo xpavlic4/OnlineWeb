@@ -1,6 +1,6 @@
 package com.focusmr.online.onlineweb.rest;
 
-import com.focusmr.online.db.ConnectionFactoryBase;
+import com.focusmr.online.db.JavaConnectionFactory;
 import com.focusmr.online.onlineweb.api.Parameter;
 import com.focusmr.online.userdb.PrefsBase;
 import com.focusmr.online.userdb.ReadParam;
@@ -17,9 +17,7 @@ import javax.ws.rs.core.MediaType;
 import java.sql.SQLException;
 
 /**
- * JAX-RS Example
- * <p/>
- * This class produces a RESTful service to read the contents of the members table.
+ * Gets pramatere value for specified user, app and country.
  */
 @Path("/users/{userId}/apps/{appId}/countries/{country}/")
 @RequestScoped
@@ -37,9 +35,12 @@ public class ParameterResourceRESTService {
         final int userId = Integer.parseInt(aUserId);
         final int applicationId = Integer.parseInt(aApplicationId);
         final int countryId = Integer.parseInt(aCountry);
-        final PrefsBase prefsBase = new PrefsBase(userId, 1, applicationId, countryId, new ConnectionFactoryBase());
+        final PrefsBase prefsBase = new PrefsBase(userId, 1, applicationId, countryId, new JavaConnectionFactory());
         final ReadParam param = prefsBase.getParam(aName);
-        return new Parameter(aName, param.getValue().toString());
+        final Parameter parameter = new Parameter();
+        parameter.setKey(aName);
+        parameter.setValue(param.getValue().toString());
+        return parameter;
     }
 
 
