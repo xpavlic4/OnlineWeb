@@ -1,16 +1,16 @@
 package com.focusmr.online.onlineweb.rest;
 
 import com.focusmr.online.onlineweb.model.App;
+import com.focusmr.online.onlineweb.model.Country;
+import com.focusmr.online.onlineweb.model.Param;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
-import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
@@ -32,11 +32,22 @@ public class TableResourceRESTService {
     }
 
     @GET
-    @Path("/app/name/{name}")
+    @Path("/country")
     @Produces(MediaType.TEXT_XML)
-    public App listAllByName(@PathParam(value = "name") String aName) {
-        final TypedQuery<App> namedQuery = em.createNamedQuery(App.APP_BYNAME, App.class);
-        namedQuery.setParameter("name", aName);
-        return namedQuery.getSingleResult();
+    public List<Country> listAllCounntry() {
+        final CriteriaQuery<Country> criteria = em.getCriteriaBuilder().createQuery(Country.class);
+        final Root<Country> appRoot = criteria.from(Country.class);
+        criteria.select(appRoot);
+        return em.createQuery(criteria).getResultList();
+    }
+
+    @GET
+    @Path("/param")
+    @Produces(MediaType.TEXT_XML)
+    public List<Param> listAllParam() {
+        final CriteriaQuery<Param> criteria = em.getCriteriaBuilder().createQuery(Param.class);
+        final Root<Param> appRoot = criteria.from(Param.class);
+        criteria.select(appRoot);
+        return em.createQuery(criteria).getResultList();
     }
 }
