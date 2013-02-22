@@ -3,12 +3,15 @@ package com.focusmr.online.onlineweb.model;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.xml.bind.annotation.XmlRootElement;
 
 
 @Entity
 @XmlRootElement
+@NamedQuery(name = Country.BY_ID, query = "select a from Country a where a.countryId = :id")
 public class Country {
+    final public static String BY_ID = "Country.byId";
     private int countryId;
 
     @javax.persistence.Column(name = "COUNTRY_ID")

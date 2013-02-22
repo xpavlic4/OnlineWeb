@@ -11,9 +11,9 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @Entity
 @XmlRootElement
-@NamedQuery(name = App.APP_BYNAME, query = "select a from App a where a.appName = :name")
+@NamedQuery(name = App.BY_ID, query = "select a from App a where a.appId = :id")
 public class App {
-    public static final String APP_BYNAME = "App.byName";
+    public static final String BY_ID = "App.byId";
     private int appId;
 
     @javax.persistence.Column(name = "APP_ID")

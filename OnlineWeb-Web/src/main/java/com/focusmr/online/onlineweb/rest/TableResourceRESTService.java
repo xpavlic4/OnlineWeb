@@ -38,6 +38,15 @@ public class TableResourceRESTService {
     }
 
     @GET
+    @Path("/app/{id}")
+    @Produces(MediaType.TEXT_XML)
+    public App listAppById(@PathParam("id") Integer id) {
+        final TypedQuery<App> namedQuery = em.createNamedQuery(App.BY_ID, App.class);
+        namedQuery.setParameter("id", id);
+        return namedQuery.getSingleResult();
+    }
+
+    @GET
     @Path("/country")
     @Produces(MediaType.TEXT_XML)
     public List<Country> listAllCounntry() {
@@ -50,6 +59,15 @@ public class TableResourceRESTService {
     }
 
     @GET
+    @Path("/country/{id}")
+    @Produces(MediaType.TEXT_XML)
+    public Country listCountryById(@PathParam("id") Integer id) {
+        final TypedQuery<Country> namedQuery = em.createNamedQuery(Country.BY_ID, Country.class);
+        namedQuery.setParameter("id", id);
+        return namedQuery.getSingleResult();
+    }
+
+    @GET
     @Path("/param")
     @Produces(MediaType.TEXT_XML)
     public List<Param> listAllParam() {
@@ -59,6 +77,29 @@ public class TableResourceRESTService {
         criteria.select(appRoot);
         criteria.orderBy(criteriaBuilder.asc(appRoot.get("paramId")));
         return em.createQuery(criteria).getResultList();
+    }
+
+    @GET
+    @Path("/param/{id}")
+    @Produces(MediaType.TEXT_XML)
+    public Param listParamById(@PathParam("id") Integer id) {
+        final TypedQuery<Param> namedQuery = em.createNamedQuery(Param.BY_ID, Param.class);
+        namedQuery.setParameter("id", id);
+        return namedQuery.getSingleResult();
+    }
+
+    @GET
+    @Path("/usertable")
+    @Produces(MediaType.TEXT_XML)
+    public List<UserTable> listAllUsers() {
+        final CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
+        final CriteriaQuery<UserTable> criteria = criteriaBuilder.createQuery(UserTable.class);
+        final Root<UserTable> appRoot = criteria.from(UserTable.class);
+        criteria.select(appRoot);
+        criteria.orderBy(criteriaBuilder.asc(appRoot.get("userId")));
+        final TypedQuery<UserTable> query = em.createQuery(criteria);
+        query.setMaxResults(10);
+        return query.getResultList();
     }
 
     @GET
