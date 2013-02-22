@@ -9,6 +9,7 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import javax.ws.rs.GET;
@@ -28,9 +29,11 @@ public class TableResourceRESTService {
     @Path("/app")
     @Produces(MediaType.TEXT_XML)
     public List<App> listAllApp() {
-        final CriteriaQuery<App> criteria = em.getCriteriaBuilder().createQuery(App.class);
+        final CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
+        final CriteriaQuery<App> criteria = criteriaBuilder.createQuery(App.class);
         final Root<App> appRoot = criteria.from(App.class);
         criteria.select(appRoot);
+        criteria.orderBy(criteriaBuilder.asc(appRoot.get("appId")));
         return em.createQuery(criteria).getResultList();
     }
 
@@ -38,9 +41,11 @@ public class TableResourceRESTService {
     @Path("/country")
     @Produces(MediaType.TEXT_XML)
     public List<Country> listAllCounntry() {
-        final CriteriaQuery<Country> criteria = em.getCriteriaBuilder().createQuery(Country.class);
+        final CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
+        final CriteriaQuery<Country> criteria = criteriaBuilder.createQuery(Country.class);
         final Root<Country> appRoot = criteria.from(Country.class);
         criteria.select(appRoot);
+        criteria.orderBy(criteriaBuilder.asc(appRoot.get("countryId")));
         return em.createQuery(criteria).getResultList();
     }
 
@@ -48,19 +53,20 @@ public class TableResourceRESTService {
     @Path("/param")
     @Produces(MediaType.TEXT_XML)
     public List<Param> listAllParam() {
-        final CriteriaQuery<Param> criteria = em.getCriteriaBuilder().createQuery(Param.class);
+        final CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
+        final CriteriaQuery<Param> criteria = criteriaBuilder.createQuery(Param.class);
         final Root<Param> appRoot = criteria.from(Param.class);
         criteria.select(appRoot);
+        criteria.orderBy(criteriaBuilder.asc(appRoot.get("paramId")));
         return em.createQuery(criteria).getResultList();
     }
 
     @GET
     @Path("/usertable/{id}")
     @Produces(MediaType.TEXT_XML)
-    public UserTable listAllUserTable(@PathParam("id") Integer id) {
+    public UserTable listUsertableById(@PathParam("id") Integer id) {
         final TypedQuery<UserTable> namedQuery = em.createNamedQuery(UserTable.USER_BYID, UserTable.class);
         namedQuery.setParameter("id", id);
         return namedQuery.getSingleResult();
     }
-
 }
