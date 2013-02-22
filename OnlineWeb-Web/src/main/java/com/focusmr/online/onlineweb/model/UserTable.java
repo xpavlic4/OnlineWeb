@@ -4,7 +4,9 @@ import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * com.focusmr.online.onlineweb.model.UserTable entity.
@@ -12,13 +14,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 @javax.persistence.Table(name = "USER_TABLE", schema = "ONLINE_AUTH")
 @Entity
 @XmlRootElement
+@XmlType(propOrder = {"userId", "userName", "belongsTo"})
 @NamedQuery(name = UserTable.USER_BYID, query = "select a from UserTable a where a.userId = :id")
 public class UserTable {
     public static final String USER_BYID = "UserTable.byId";
     private int userId;
-
-
-    private int belongsTo;
+    private Integer belongsTo;
+    private String userName;
 
     @javax.persistence.Column(name = "USER_ID")
     @Id
@@ -29,8 +31,6 @@ public class UserTable {
     public void setUserId(int userId) {
         this.userId = userId;
     }
-
-    private String userName;
 
     @javax.persistence.Column(name = "USER_NAME")
     @Basic
@@ -44,15 +44,16 @@ public class UserTable {
 
     @javax.persistence.Column(name = "BELONGS_TO")
     @Basic
-    public int getBelongsTo() {
+    @XmlElement(name = "masterId")
+    public Integer getBelongsTo() {
         return belongsTo;
     }
 
-    public void setBelongsTo(int belongsTo) {
+    public void setBelongsTo(Integer belongsTo) {
         this.belongsTo = belongsTo;
     }
 
-    @SuppressWarnings("RedundantIfStatement")
+    @SuppressWarnings("SimplifiableIfStatement")
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -60,17 +61,16 @@ public class UserTable {
 
         UserTable userTable = (UserTable) o;
 
-        if (belongsTo != userTable.belongsTo) return false;
         if (userId != userTable.userId) return false;
-        if (!userName.equals(userTable.userName)) return false;
+        if (belongsTo != null ? !belongsTo.equals(userTable.belongsTo) : userTable.belongsTo != null) return false;
+        return userName.equals(userTable.userName);
 
-        return true;
     }
 
     @Override
     public int hashCode() {
         int result = userId;
-        result = 31 * result + belongsTo;
+        result = 31 * result + (belongsTo != null ? belongsTo.hashCode() : 0);
         result = 31 * result + userName.hashCode();
         return result;
     }
