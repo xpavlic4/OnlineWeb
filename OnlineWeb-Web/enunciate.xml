@@ -8,6 +8,8 @@
     </namespaces>
     <modules>
         <!-- Docs -->
-        <docs splashPackage="com.focusmr.online.onlineweb" title="OnlineWeb" copyright="focusmr.com"/>
+        <docs docsDir="docs" splashPackage="com.focusmr.online.onlineweb" title="OnlineWeb"
+              copyright="focusmr.com"
+                />
     </modules>
 </enunciate>
