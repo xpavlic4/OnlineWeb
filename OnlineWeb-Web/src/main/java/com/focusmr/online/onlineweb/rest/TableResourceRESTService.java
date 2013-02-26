@@ -22,6 +22,11 @@ public class TableResourceRESTService {
     @Inject
     private EntityManager em;
 
+    /**
+     * Gets all applications.
+     *
+     * @return list of applications
+     */
     @GET
     @Path("/app")
     @Produces(MediaType.TEXT_XML)
@@ -34,6 +39,12 @@ public class TableResourceRESTService {
         return em.createQuery(criteria).getResultList();
     }
 
+    /**
+     * Gets application of given id
+     *
+     * @param id id of applicatoin
+     * @return application
+     */
     @GET
     @Path("/app/{id}")
     @Produces(MediaType.TEXT_XML)
@@ -43,6 +54,11 @@ public class TableResourceRESTService {
         return namedQuery.getSingleResult();
     }
 
+    /**
+     * Gets all countries.
+     *
+     * @return list of all countries
+     */
     @GET
     @Path("/country")
     @Produces(MediaType.TEXT_XML)
@@ -55,6 +71,12 @@ public class TableResourceRESTService {
         return em.createQuery(criteria).getResultList();
     }
 
+    /**
+     * Gets country of specific id.
+     *
+     * @param id id of country
+     * @return country
+     */
     @GET
     @Path("/country/{id}")
     @Produces(MediaType.TEXT_XML)
@@ -64,6 +86,11 @@ public class TableResourceRESTService {
         return namedQuery.getSingleResult();
     }
 
+    /**
+     * Gets all parameters.
+     *
+     * @return list of all parameters
+     */
     @GET
     @Path("/param")
     @Produces(MediaType.TEXT_XML)
@@ -76,6 +103,12 @@ public class TableResourceRESTService {
         return em.createQuery(criteria).getResultList();
     }
 
+    /**
+     * Gets param with of given id.
+     *
+     * @param id id of param
+     * @return param
+     */
     @GET
     @Path("/param/{id}")
     @Produces(MediaType.TEXT_XML)
@@ -85,6 +118,12 @@ public class TableResourceRESTService {
         return namedQuery.getSingleResult();
     }
 
+    /**
+     * Gets 10 results of usertable from given offset sorted by userId.
+     *
+     * @param offset number of rows to be skipped
+     * @return list of usertable
+     */
     @GET
     @Path("/usertable")
     @Produces(MediaType.TEXT_XML)
@@ -102,6 +141,12 @@ public class TableResourceRESTService {
         return query.getResultList();
     }
 
+    /**
+     * Gets usertable of given id.
+     *
+     * @param id id of usertable
+     * @return usertable
+     */
     @GET
     @Path("/usertable/{id}")
     @Produces(MediaType.TEXT_XML)

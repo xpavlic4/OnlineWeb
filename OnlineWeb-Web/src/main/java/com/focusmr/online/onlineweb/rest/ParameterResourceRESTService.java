@@ -24,6 +24,24 @@ public class ParameterResourceRESTService {
     @Inject
     private ParamResolver resolver;
 
+    /**
+     * Gets evaluated parameter.
+     *
+     * @param aUserId        id of user
+     * @param aApplicationId id of applicatoin
+     * @param aCountry       id of country
+     * @param aName          name of parameter
+     * @return parameter key and value
+     * @throws SQLException
+     * @throws NamingException E.g. http://js2:9090/OnlineWeb-Web/rest/version1/users/1/apps/1/countries/1/params/locale
+     *                         <pre> {@code
+     *                         <parameter>
+     *                            <key>locale</key>
+     *                           <value>en_GB</value>
+     *                         </parameter>
+     *                         }
+     *                         </pre>
+     */
     @GET
     @Path("/params/{name}")
     @Produces(MediaType.TEXT_XML)
