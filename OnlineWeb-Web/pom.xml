@@ -138,7 +138,7 @@
     <build>
         <!-- Maven will append the version to the finalName (which is the
             name given to the generated war, and hence the context root) -->
-        <finalName>${parent.artifactId}</finalName>
+        <!--<finalName>${parent.artifactId}</finalName>-->
         <plugins>
             <!-- Compiler plugin enforces Java 1.6 compatibility and activates
                 annotation processors -->
@@ -169,9 +169,9 @@
                 <configuration>
                     <hostname>${jboss-as-maven-plugin.hostname}</hostname>
                     <port>${jboss-as-maven-plugin.port}</port>
-
                     <username>${jboss-as-maven-plugin.username}</username>
                     <password>${jboss-as-maven-plugin.password}</password>
+
                 </configuration>
             </plugin>
         </plugins>
