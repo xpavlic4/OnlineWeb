@@ -11,9 +11,13 @@
     </parent>
 
     <artifactId>OnlineWeb-Web</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
     <dependencies>
+        <dependency>
+            <groupId>org.codehaus.enunciate</groupId>
+            <artifactId>enunciate-rt</artifactId>
+            <version>1.26.2</version>
+        </dependency>
         <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-library</artifactId>
@@ -39,7 +43,7 @@
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>OnlineWeb-Api</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>${project.version}</version>
             <type>jar</type>
         </dependency>
 
@@ -170,6 +174,23 @@
                     <password>${jboss-as-maven-plugin.password}</password>
                     <filename>${project.build.finalName}.war</filename>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.enunciate</groupId>
+                <artifactId>maven-enunciate-plugin</artifactId>
+                <configuration>
+                    <configFile>enunciate.xml</configFile>
+                    <exports>
+                        <jaxws.client.library.binaries>client.jar</jaxws.client.library.binaries>
+                    </exports>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>assemble</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
