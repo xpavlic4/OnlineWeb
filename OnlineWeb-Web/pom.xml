@@ -180,9 +180,6 @@
                 <artifactId>maven-enunciate-plugin</artifactId>
                 <configuration>
                     <configFile>enunciate.xml</configFile>
-                    <exports>
-                        <jaxws.client.library.binaries>client.jar</jaxws.client.library.binaries>
-                    </exports>
                 </configuration>
                 <executions>
                     <execution>
