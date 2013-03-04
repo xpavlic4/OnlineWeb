@@ -4,6 +4,7 @@ import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Generated.
@@ -11,6 +12,7 @@ import javax.persistence.NamedQuery;
 @SuppressWarnings("RedundantIfStatement")
 @javax.persistence.Table(name = "TREEMASTER_AGTREE")
 @Entity
+@XmlRootElement
 @NamedQuery(name = TreemasterAgtree.BY_AGTREE_ID, query = "select s from TreemasterAgtree s where s.agtreeId=:agtreeId")
 public class TreemasterAgtree {
     public static final String BY_AGTREE_ID = "TreemasterAgtree.byAgtreeId";
