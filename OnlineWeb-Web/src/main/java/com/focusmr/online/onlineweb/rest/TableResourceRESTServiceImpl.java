@@ -22,7 +22,7 @@ public class TableResourceRESTServiceImpl implements TableResourceRESTService {
 
     @Override
     @GET
-    @Path("/app")
+    @Path("/App")
     @Produces(MediaType.TEXT_XML)
     public List<App> listAllApp() {
         final CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
@@ -35,7 +35,7 @@ public class TableResourceRESTServiceImpl implements TableResourceRESTService {
 
     @Override
     @GET
-    @Path("/app/{id}")
+    @Path("/aApppp/{id}")
     @Produces(MediaType.TEXT_XML)
     public App listAppById(@PathParam("id") Integer id) {
         final TypedQuery<App> namedQuery = em.createNamedQuery(App.BY_ID, App.class);
@@ -45,7 +45,7 @@ public class TableResourceRESTServiceImpl implements TableResourceRESTService {
 
     @Override
     @GET
-    @Path("/country")
+    @Path("/Country")
     @Produces(MediaType.TEXT_XML)
     public List<Country> listAllCounntry() {
         final CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
@@ -58,7 +58,7 @@ public class TableResourceRESTServiceImpl implements TableResourceRESTService {
 
     @Override
     @GET
-    @Path("/country/{id}")
+    @Path("/Country/{id}")
     @Produces(MediaType.TEXT_XML)
     public Country listCountryById(@PathParam("id") Integer id) {
         final TypedQuery<Country> namedQuery = em.createNamedQuery(Country.BY_ID, Country.class);
@@ -68,7 +68,7 @@ public class TableResourceRESTServiceImpl implements TableResourceRESTService {
 
     @Override
     @GET
-    @Path("/param")
+    @Path("/Param")
     @Produces(MediaType.TEXT_XML)
     public List<Param> listAllParam() {
         final CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
@@ -81,7 +81,7 @@ public class TableResourceRESTServiceImpl implements TableResourceRESTService {
 
     @Override
     @GET
-    @Path("/param/{id}")
+    @Path("/Param/{id}")
     @Produces(MediaType.TEXT_XML)
     public Param listParamById(@PathParam("id") Integer id) {
         final TypedQuery<Param> namedQuery = em.createNamedQuery(Param.BY_ID, Param.class);
@@ -91,7 +91,7 @@ public class TableResourceRESTServiceImpl implements TableResourceRESTService {
 
     @Override
     @GET
-    @Path("/usertable")
+    @Path("/UserTable")
     @Produces(MediaType.TEXT_XML)
     public List<UserTable> listAllUsers(@QueryParam("offset") int offset) {
         final CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
@@ -109,7 +109,7 @@ public class TableResourceRESTServiceImpl implements TableResourceRESTService {
 
     @Override
     @GET
-    @Path("/usertable/{id}")
+    @Path("/UserTable/{id}")
     @Produces(MediaType.TEXT_XML)
     public UserTable listUsertableById(@PathParam("id") Integer id) {
         final TypedQuery<UserTable> namedQuery = em.createNamedQuery(UserTable.USER_BYID, UserTable.class);
@@ -132,7 +132,7 @@ public class TableResourceRESTServiceImpl implements TableResourceRESTService {
 
     @Override
     @GET
-    @Path("/daytable")
+    @Path("/DayTable")
     @Produces(MediaType.TEXT_XML)
     public List<DayTable> listAllDayTable() {
         final CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
