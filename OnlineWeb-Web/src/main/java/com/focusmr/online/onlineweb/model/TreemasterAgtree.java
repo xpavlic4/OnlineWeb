@@ -20,11 +20,11 @@ public class TreemasterAgtree {
 
     @javax.persistence.Column(name = "TREEMASTER_USER_ID")
     @Id
-    int getTreemasterUserId() {
+    public int getTreemasterUserId() {
         return treemasterUserId;
     }
 
-    void setTreemasterUserId(int treemasterUserId) {
+    public void setTreemasterUserId(int treemasterUserId) {
         this.treemasterUserId = treemasterUserId;
     }
 
@@ -32,11 +32,11 @@ public class TreemasterAgtree {
 
     @javax.persistence.Column(name = "AGTREE_ID")
     @Basic
-    int getAgtreeId() {
+    public int getAgtreeId() {
         return agtreeId;
     }
 
-    void setAgtreeId(int agtreeId) {
+    public void setAgtreeId(int agtreeId) {
         this.agtreeId = agtreeId;
     }
 
