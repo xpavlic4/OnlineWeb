@@ -3,6 +3,7 @@ package com.focusmr.online.onlineweb.model;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Generated.
@@ -10,16 +11,17 @@ import javax.persistence.Id;
 @SuppressWarnings("RedundantIfStatement")
 @javax.persistence.Table(name = "RESOURCE_TABLE")
 @Entity
+@XmlRootElement
 public class ResourceTable {
     private int resourceId;
 
     @javax.persistence.Column(name = "RESOURCE_ID")
     @Id
-    int getResourceId() {
+    public int getResourceId() {
         return resourceId;
     }
 
-    void setResourceId(int resourceId) {
+    public void setResourceId(int resourceId) {
         this.resourceId = resourceId;
     }
 
@@ -27,11 +29,11 @@ public class ResourceTable {
 
     @javax.persistence.Column(name = "RESOURCE_NAME")
     @Basic
-    String getResourceName() {
+    public String getResourceName() {
         return resourceName;
     }
 
-    void setResourceName(String resourceName) {
+    public void setResourceName(String resourceName) {
         this.resourceName = resourceName;
     }
 

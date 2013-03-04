@@ -3,6 +3,7 @@ package com.focusmr.online.onlineweb.model;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Generated.
@@ -10,16 +11,17 @@ import javax.persistence.Id;
 @SuppressWarnings("RedundantIfStatement")
 @javax.persistence.Table(name = "PARAM_GROUP")
 @Entity
+@XmlRootElement
 public class ParamGroup {
     private int paramGroupId;
 
     @javax.persistence.Column(name = "PARAM_GROUP_ID")
     @Id
-    int getParamGroupId() {
+    public int getParamGroupId() {
         return paramGroupId;
     }
 
-    void setParamGroupId(int paramGroupId) {
+    public void setParamGroupId(int paramGroupId) {
         this.paramGroupId = paramGroupId;
     }
 
@@ -27,11 +29,11 @@ public class ParamGroup {
 
     @javax.persistence.Column(name = "PARAM_GROUP_NAME")
     @Basic
-    String getParamGroupName() {
+    public String getParamGroupName() {
         return paramGroupName;
     }
 
-    void setParamGroupName(String paramGroupName) {
+    public void setParamGroupName(String paramGroupName) {
         this.paramGroupName = paramGroupName;
     }
 
@@ -39,11 +41,11 @@ public class ParamGroup {
 
     @javax.persistence.Column(name = "DISPLAY_NAME")
     @Basic
-    String getDisplayName() {
+    public String getDisplayName() {
         return displayName;
     }
 
-    void setDisplayName(String displayName) {
+    public void setDisplayName(String displayName) {
         this.displayName = displayName;
     }
 

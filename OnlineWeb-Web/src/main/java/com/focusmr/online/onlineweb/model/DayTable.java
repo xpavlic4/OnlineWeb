@@ -3,6 +3,7 @@ package com.focusmr.online.onlineweb.model;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Generated.
@@ -10,16 +11,17 @@ import javax.persistence.Id;
 @SuppressWarnings("RedundantIfStatement")
 @javax.persistence.Table(name = "DAY_TABLE")
 @Entity
+@XmlRootElement
 public class DayTable {
     private int dayId;
 
     @javax.persistence.Column(name = "DAY_ID")
     @Id
-    int getDayId() {
+    public int getDayId() {
         return dayId;
     }
 
-    void setDayId(int dayId) {
+    public void setDayId(int dayId) {
         this.dayId = dayId;
     }
 
@@ -27,11 +29,11 @@ public class DayTable {
 
     @javax.persistence.Column(name = "DAY_NAME")
     @Basic
-    String getDayName() {
+    public String getDayName() {
         return dayName;
     }
 
-    void setDayName(String dayName) {
+    public void setDayName(String dayName) {
         this.dayName = dayName;
     }
 

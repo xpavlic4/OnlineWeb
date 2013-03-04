@@ -3,6 +3,7 @@ package com.focusmr.online.onlineweb.model;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Generated.
@@ -10,16 +11,17 @@ import javax.persistence.Id;
 @SuppressWarnings("RedundantIfStatement")
 @javax.persistence.Table(name = "GLOBAL_PACKAGING_FORM")
 @Entity
+@XmlRootElement
 public class GlobalPackagingForm {
     private int formId;
 
     @javax.persistence.Column(name = "FORM_ID")
     @Id
-    int getFormId() {
+    public int getFormId() {
         return formId;
     }
 
-    void setFormId(int formId) {
+    public void setFormId(int formId) {
         this.formId = formId;
     }
 
@@ -27,11 +29,11 @@ public class GlobalPackagingForm {
 
     @javax.persistence.Column(name = "FORM")
     @Basic
-    String getForm() {
+    public String getForm() {
         return form;
     }
 
-    void setForm(String form) {
+    public void setForm(String form) {
         this.form = form;
     }
 

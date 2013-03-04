@@ -3,6 +3,7 @@ package com.focusmr.online.onlineweb.model;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Generated.
@@ -10,16 +11,17 @@ import javax.persistence.Id;
 @SuppressWarnings("RedundantIfStatement")
 @javax.persistence.Table(name = "GLOBAL_KEY_ACCOUNT")
 @Entity
+@XmlRootElement
 public class GlobalKeyAccount {
     private int keyAccountId;
 
     @javax.persistence.Column(name = "KEY_ACCOUNT_ID")
     @Id
-    int getKeyAccountId() {
+    public int getKeyAccountId() {
         return keyAccountId;
     }
 
-    void setKeyAccountId(int keyAccountId) {
+    public void setKeyAccountId(int keyAccountId) {
         this.keyAccountId = keyAccountId;
     }
 
@@ -27,11 +29,11 @@ public class GlobalKeyAccount {
 
     @javax.persistence.Column(name = "NAME")
     @Basic
-    String getName() {
+    public String getName() {
         return name;
     }
 
-    void setName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 

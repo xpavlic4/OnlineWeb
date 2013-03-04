@@ -3,22 +3,24 @@ package com.focusmr.online.onlineweb.model;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Generated.
  */
 @SuppressWarnings("RedundantIfStatement")
 @Entity
+@XmlRootElement
 public class Locale {
     private int localeId;
 
     @javax.persistence.Column(name = "LOCALE_ID")
     @Id
-    int getLocaleId() {
+    public int getLocaleId() {
         return localeId;
     }
 
-    void setLocaleId(int localeId) {
+    public void setLocaleId(int localeId) {
         this.localeId = localeId;
     }
 
@@ -26,11 +28,11 @@ public class Locale {
 
     @javax.persistence.Column(name = "LOCALE_STRING")
     @Basic
-    String getLocaleString() {
+    public String getLocaleString() {
         return localeString;
     }
 
-    void setLocaleString(String localeString) {
+    public void setLocaleString(String localeString) {
         this.localeString = localeString;
     }
 

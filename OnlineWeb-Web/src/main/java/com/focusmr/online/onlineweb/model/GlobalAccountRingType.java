@@ -3,6 +3,7 @@ package com.focusmr.online.onlineweb.model;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Generated.
@@ -10,16 +11,17 @@ import javax.persistence.Id;
 @SuppressWarnings("RedundantIfStatement")
 @javax.persistence.Table(name = "GLOBAL_ACCOUNT_RING_TYPE")
 @Entity
+@XmlRootElement
 public class GlobalAccountRingType {
     private int accRingTypeId;
 
     @javax.persistence.Column(name = "ACC_RING_TYPE_ID")
     @Id
-    int getAccRingTypeId() {
+    public int getAccRingTypeId() {
         return accRingTypeId;
     }
 
-    void setAccRingTypeId(int accRingTypeId) {
+    public void setAccRingTypeId(int accRingTypeId) {
         this.accRingTypeId = accRingTypeId;
     }
 
@@ -27,11 +29,11 @@ public class GlobalAccountRingType {
 
     @javax.persistence.Column(name = "ACC_RING_TYPE")
     @Basic
-    String getAccRingType() {
+    public String getAccRingType() {
         return accRingType;
     }
 
-    void setAccRingType(String accRingType) {
+    public void setAccRingType(String accRingType) {
         this.accRingType = accRingType;
     }
 

@@ -3,6 +3,7 @@ package com.focusmr.online.onlineweb.model;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.math.BigInteger;
 
 /**
@@ -11,16 +12,17 @@ import java.math.BigInteger;
 @SuppressWarnings("RedundantIfStatement")
 @javax.persistence.Table(name = "GROUP_TABLE")
 @Entity
+@XmlRootElement
 public class GroupTable {
     private int groupId;
 
     @javax.persistence.Column(name = "GROUP_ID")
     @Id
-    int getGroupId() {
+    public int getGroupId() {
         return groupId;
     }
 
-    void setGroupId(int groupId) {
+    public void setGroupId(int groupId) {
         this.groupId = groupId;
     }
 
@@ -28,11 +30,11 @@ public class GroupTable {
 
     @javax.persistence.Column(name = "GROUP_NAME")
     @Basic
-    String getGroupName() {
+    public String getGroupName() {
         return groupName;
     }
 
-    void setGroupName(String groupName) {
+    public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
 
@@ -40,11 +42,11 @@ public class GroupTable {
 
     @javax.persistence.Column(name = "DISPLAY_NAME")
     @Basic
-    String getDisplayName() {
+    public String getDisplayName() {
         return displayName;
     }
 
-    void setDisplayName(String displayName) {
+    public void setDisplayName(String displayName) {
         this.displayName = displayName;
     }
 
@@ -52,11 +54,11 @@ public class GroupTable {
 
     @javax.persistence.Column(name = "SORT_KEY")
     @Basic
-    BigInteger getSortKey() {
+    public BigInteger getSortKey() {
         return sortKey;
     }
 
-    void setSortKey(BigInteger sortKey) {
+    public void setSortKey(BigInteger sortKey) {
         this.sortKey = sortKey;
     }
 

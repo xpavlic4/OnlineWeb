@@ -3,6 +3,7 @@ package com.focusmr.online.onlineweb.model;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Generated.
@@ -10,16 +11,17 @@ import javax.persistence.Id;
 @SuppressWarnings("RedundantIfStatement")
 @javax.persistence.Table(name = "MAILER_TYPE")
 @Entity
+@XmlRootElement
 public class MailerType {
     private int mailerTypeId;
 
     @javax.persistence.Column(name = "MAILER_TYPE_ID")
     @Id
-    int getMailerTypeId() {
+    public int getMailerTypeId() {
         return mailerTypeId;
     }
 
-    void setMailerTypeId(int mailerTypeId) {
+    public void setMailerTypeId(int mailerTypeId) {
         this.mailerTypeId = mailerTypeId;
     }
 
@@ -27,11 +29,11 @@ public class MailerType {
 
     @javax.persistence.Column(name = "MAILER_TYPE")
     @Basic
-    String getMailerType() {
+    public String getMailerType() {
         return mailerType;
     }
 
-    void setMailerType(String mailerType) {
+    public void setMailerType(String mailerType) {
         this.mailerType = mailerType;
     }
 
@@ -39,11 +41,11 @@ public class MailerType {
 
     @javax.persistence.Column(name = "DISPLAY_NAME")
     @Basic
-    String getDisplayName() {
+    public String getDisplayName() {
         return displayName;
     }
 
-    void setDisplayName(String displayName) {
+    public void setDisplayName(String displayName) {
         this.displayName = displayName;
     }
 

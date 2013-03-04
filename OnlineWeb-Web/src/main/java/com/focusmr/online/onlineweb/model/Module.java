@@ -3,22 +3,24 @@ package com.focusmr.online.onlineweb.model;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Generated.
  */
 @SuppressWarnings("RedundantIfStatement")
 @Entity
+@XmlRootElement
 public class Module {
     private int moduleId;
 
     @javax.persistence.Column(name = "MODULE_ID")
     @Id
-    int getModuleId() {
+    public int getModuleId() {
         return moduleId;
     }
 
-    void setModuleId(int moduleId) {
+    public void setModuleId(int moduleId) {
         this.moduleId = moduleId;
     }
 
@@ -26,11 +28,11 @@ public class Module {
 
     @javax.persistence.Column(name = "MODULE_NAME")
     @Basic
-    String getModuleName() {
+    public String getModuleName() {
         return moduleName;
     }
 
-    void setModuleName(String moduleName) {
+    public void setModuleName(String moduleName) {
         this.moduleName = moduleName;
     }
 
@@ -38,11 +40,11 @@ public class Module {
 
     @javax.persistence.Column(name = "DISPLAY_NAME")
     @Basic
-    String getDisplayName() {
+    public String getDisplayName() {
         return displayName;
     }
 
-    void setDisplayName(String displayName) {
+    public void setDisplayName(String displayName) {
         this.displayName = displayName;
     }
 

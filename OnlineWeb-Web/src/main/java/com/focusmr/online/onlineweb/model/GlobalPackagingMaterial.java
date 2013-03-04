@@ -3,6 +3,7 @@ package com.focusmr.online.onlineweb.model;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Generated.
@@ -10,16 +11,17 @@ import javax.persistence.Id;
 @SuppressWarnings("RedundantIfStatement")
 @javax.persistence.Table(name = "GLOBAL_PACKAGING_MATERIAL")
 @Entity
+@XmlRootElement
 public class GlobalPackagingMaterial {
     private int materialId;
 
     @javax.persistence.Column(name = "MATERIAL_ID")
     @Id
-    int getMaterialId() {
+    public int getMaterialId() {
         return materialId;
     }
 
-    void setMaterialId(int materialId) {
+    public void setMaterialId(int materialId) {
         this.materialId = materialId;
     }
 
@@ -27,11 +29,11 @@ public class GlobalPackagingMaterial {
 
     @javax.persistence.Column(name = "MATERIAL")
     @Basic
-    String getMaterial() {
+    public String getMaterial() {
         return material;
     }
 
-    void setMaterial(String material) {
+    public void setMaterial(String material) {
         this.material = material;
     }
 

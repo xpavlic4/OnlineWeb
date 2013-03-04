@@ -3,6 +3,7 @@ package com.focusmr.online.onlineweb.model;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Generated.
@@ -10,16 +11,17 @@ import javax.persistence.Id;
 @SuppressWarnings("RedundantIfStatement")
 @javax.persistence.Table(name = "AGTREE_LVL_DEF")
 @Entity
+@XmlRootElement
 public class AgtreeLvlDef {
     private int lvlDefId;
 
     @javax.persistence.Column(name = "LVL_DEF_ID")
     @Id
-    int getLvlDefId() {
+    public int getLvlDefId() {
         return lvlDefId;
     }
 
-    void setLvlDefId(int lvlDefId) {
+    public void setLvlDefId(int lvlDefId) {
         this.lvlDefId = lvlDefId;
     }
 
@@ -27,11 +29,11 @@ public class AgtreeLvlDef {
 
     @javax.persistence.Column(name = "DEFINITION")
     @Basic
-    String getDefinition() {
+    public String getDefinition() {
         return definition;
     }
 
-    void setDefinition(String definition) {
+    public void setDefinition(String definition) {
         this.definition = definition;
     }
 

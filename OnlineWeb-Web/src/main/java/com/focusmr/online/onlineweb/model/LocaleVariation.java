@@ -3,6 +3,7 @@ package com.focusmr.online.onlineweb.model;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Generated.
@@ -10,16 +11,17 @@ import javax.persistence.Id;
 @SuppressWarnings("RedundantIfStatement")
 @javax.persistence.Table(name = "LOCALE_VARIATION")
 @Entity
+@XmlRootElement
 public class LocaleVariation {
     private int variationId;
 
     @javax.persistence.Column(name = "VARIATION_ID")
     @Id
-    int getVariationId() {
+    public int getVariationId() {
         return variationId;
     }
 
-    void setVariationId(int variationId) {
+    public void setVariationId(int variationId) {
         this.variationId = variationId;
     }
 
@@ -27,11 +29,11 @@ public class LocaleVariation {
 
     @javax.persistence.Column(name = "VARIATION_NAME")
     @Basic
-    String getVariationName() {
+    public String getVariationName() {
         return variationName;
     }
 
-    void setVariationName(String variationName) {
+    public void setVariationName(String variationName) {
         this.variationName = variationName;
     }
 

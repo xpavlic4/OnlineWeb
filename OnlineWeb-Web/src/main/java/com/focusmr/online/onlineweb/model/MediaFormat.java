@@ -3,6 +3,7 @@ package com.focusmr.online.onlineweb.model;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Generated.
@@ -10,16 +11,17 @@ import javax.persistence.Id;
 @SuppressWarnings("RedundantIfStatement")
 @javax.persistence.Table(name = "MEDIA_FORMAT")
 @Entity
+@XmlRootElement
 public class MediaFormat {
     private int mediaFormatId;
 
     @javax.persistence.Column(name = "MEDIA_FORMAT_ID")
     @Id
-    int getMediaFormatId() {
+    public int getMediaFormatId() {
         return mediaFormatId;
     }
 
-    void setMediaFormatId(int mediaFormatId) {
+    public void setMediaFormatId(int mediaFormatId) {
         this.mediaFormatId = mediaFormatId;
     }
 
@@ -27,11 +29,11 @@ public class MediaFormat {
 
     @javax.persistence.Column(name = "MEDIA_FORMAT")
     @Basic
-    String getMediaFormat() {
+    public String getMediaFormat() {
         return mediaFormat;
     }
 
-    void setMediaFormat(String mediaFormat) {
+    public void setMediaFormat(String mediaFormat) {
         this.mediaFormat = mediaFormat;
     }
 

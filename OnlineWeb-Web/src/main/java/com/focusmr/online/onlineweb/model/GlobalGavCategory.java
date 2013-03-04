@@ -3,6 +3,7 @@ package com.focusmr.online.onlineweb.model;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Generated.
@@ -10,16 +11,17 @@ import javax.persistence.Id;
 @SuppressWarnings("RedundantIfStatement")
 @javax.persistence.Table(name = "GLOBAL_GAV_CATEGORY")
 @Entity
+@XmlRootElement
 public class GlobalGavCategory {
     private int globalGavCategoryId;
 
     @javax.persistence.Column(name = "GLOBAL_GAV_CATEGORY_ID")
     @Id
-    int getGlobalGavCategoryId() {
+    public int getGlobalGavCategoryId() {
         return globalGavCategoryId;
     }
 
-    void setGlobalGavCategoryId(int globalGavCategoryId) {
+    public void setGlobalGavCategoryId(int globalGavCategoryId) {
         this.globalGavCategoryId = globalGavCategoryId;
     }
 
@@ -27,11 +29,11 @@ public class GlobalGavCategory {
 
     @javax.persistence.Column(name = "GAV_CATEGORY")
     @Basic
-    String getGavCategory() {
+    public String getGavCategory() {
         return gavCategory;
     }
 
-    void setGavCategory(String gavCategory) {
+    public void setGavCategory(String gavCategory) {
         this.gavCategory = gavCategory;
     }
 

@@ -3,6 +3,7 @@ package com.focusmr.online.onlineweb.model;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Generated.
@@ -10,16 +11,17 @@ import javax.persistence.Id;
 @SuppressWarnings("RedundantIfStatement")
 @javax.persistence.Table(name = "RELEVANTSET_NODE_TYPE")
 @Entity
+@XmlRootElement
 public class RelevantsetNodeType {
     private int relevantsetNodeTypeId;
 
     @javax.persistence.Column(name = "RELEVANTSET_NODE_TYPE_ID")
     @Id
-    int getRelevantsetNodeTypeId() {
+    public int getRelevantsetNodeTypeId() {
         return relevantsetNodeTypeId;
     }
 
-    void setRelevantsetNodeTypeId(int relevantsetNodeTypeId) {
+    public void setRelevantsetNodeTypeId(int relevantsetNodeTypeId) {
         this.relevantsetNodeTypeId = relevantsetNodeTypeId;
     }
 
@@ -27,11 +29,11 @@ public class RelevantsetNodeType {
 
     @javax.persistence.Column(name = "NODE_TYPE")
     @Basic
-    String getNodeType() {
+    public String getNodeType() {
         return nodeType;
     }
 
-    void setNodeType(String nodeType) {
+    public void setNodeType(String nodeType) {
         this.nodeType = nodeType;
     }
 

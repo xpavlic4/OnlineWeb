@@ -3,6 +3,7 @@ package com.focusmr.online.onlineweb.model;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Generated.
@@ -10,16 +11,17 @@ import javax.persistence.Id;
 @SuppressWarnings("RedundantIfStatement")
 @javax.persistence.Table(name = "GLOBAL_PACKAGING_CYCLE")
 @Entity
+@XmlRootElement
 public class GlobalPackagingCycle {
     private int cycleId;
 
     @javax.persistence.Column(name = "CYCLE_ID")
     @Id
-    int getCycleId() {
+    public int getCycleId() {
         return cycleId;
     }
 
-    void setCycleId(int cycleId) {
+    public void setCycleId(int cycleId) {
         this.cycleId = cycleId;
     }
 
@@ -27,11 +29,11 @@ public class GlobalPackagingCycle {
 
     @javax.persistence.Column(name = "CYCLE")
     @Basic
-    String getCycle() {
+    public String getCycle() {
         return cycle;
     }
 
-    void setCycle(String cycle) {
+    public void setCycle(String cycle) {
         this.cycle = cycle;
     }
 

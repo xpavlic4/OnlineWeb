@@ -3,6 +3,7 @@ package com.focusmr.online.onlineweb.model;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Generated.
@@ -10,16 +11,17 @@ import javax.persistence.Id;
 @SuppressWarnings("RedundantIfStatement")
 @javax.persistence.Table(name = "GLOBAL_TC_SET")
 @Entity
+@XmlRootElement
 public class GlobalTcSet {
     private int globalTcSetId;
 
     @javax.persistence.Column(name = "GLOBAL_TC_SET_ID")
     @Id
-    int getGlobalTcSetId() {
+    public int getGlobalTcSetId() {
         return globalTcSetId;
     }
 
-    void setGlobalTcSetId(int globalTcSetId) {
+    public void setGlobalTcSetId(int globalTcSetId) {
         this.globalTcSetId = globalTcSetId;
     }
 
@@ -27,11 +29,11 @@ public class GlobalTcSet {
 
     @javax.persistence.Column(name = "NAME")
     @Basic
-    String getName() {
+    public String getName() {
         return name;
     }
 
-    void setName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -39,11 +41,11 @@ public class GlobalTcSet {
 
     @javax.persistence.Column(name = "INFO")
     @Basic
-    String getInfo() {
+    public String getInfo() {
         return info;
     }
 
-    void setInfo(String info) {
+    public void setInfo(String info) {
         this.info = info;
     }
 

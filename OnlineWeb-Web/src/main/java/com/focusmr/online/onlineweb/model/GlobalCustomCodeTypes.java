@@ -3,6 +3,7 @@ package com.focusmr.online.onlineweb.model;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Generated.
@@ -10,16 +11,17 @@ import javax.persistence.Id;
 @SuppressWarnings("RedundantIfStatement")
 @javax.persistence.Table(name = "GLOBAL_CUSTOM_CODE_TYPES")
 @Entity
+@XmlRootElement
 public class GlobalCustomCodeTypes {
     private int customCodeTypeId;
 
     @javax.persistence.Column(name = "CUSTOM_CODE_TYPE_ID")
     @Id
-    int getCustomCodeTypeId() {
+    public int getCustomCodeTypeId() {
         return customCodeTypeId;
     }
 
-    void setCustomCodeTypeId(int customCodeTypeId) {
+    public void setCustomCodeTypeId(int customCodeTypeId) {
         this.customCodeTypeId = customCodeTypeId;
     }
 
@@ -27,11 +29,11 @@ public class GlobalCustomCodeTypes {
 
     @javax.persistence.Column(name = "CUSTOM_CODE_TYPE")
     @Basic
-    String getCustomCodeType() {
+    public String getCustomCodeType() {
         return customCodeType;
     }
 
-    void setCustomCodeType(String customCodeType) {
+    public void setCustomCodeType(String customCodeType) {
         this.customCodeType = customCodeType;
     }
 
@@ -39,11 +41,11 @@ public class GlobalCustomCodeTypes {
 
     @javax.persistence.Column(name = "CUSTOM_CODE_TYPE_SHORT")
     @Basic
-    String getCustomCodeTypeShort() {
+    public String getCustomCodeTypeShort() {
         return customCodeTypeShort;
     }
 
-    void setCustomCodeTypeShort(String customCodeTypeShort) {
+    public void setCustomCodeTypeShort(String customCodeTypeShort) {
         this.customCodeTypeShort = customCodeTypeShort;
     }
 

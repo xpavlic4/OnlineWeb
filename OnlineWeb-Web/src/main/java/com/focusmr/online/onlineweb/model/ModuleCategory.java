@@ -3,6 +3,7 @@ package com.focusmr.online.onlineweb.model;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Generated.
@@ -10,16 +11,17 @@ import javax.persistence.Id;
 @SuppressWarnings("RedundantIfStatement")
 @javax.persistence.Table(name = "MODULE_CATEGORY")
 @Entity
+@XmlRootElement
 public class ModuleCategory {
     private int moduleCategoryId;
 
     @javax.persistence.Column(name = "MODULE_CATEGORY_ID")
     @Id
-    int getModuleCategoryId() {
+    public int getModuleCategoryId() {
         return moduleCategoryId;
     }
 
-    void setModuleCategoryId(int moduleCategoryId) {
+    public void setModuleCategoryId(int moduleCategoryId) {
         this.moduleCategoryId = moduleCategoryId;
     }
 
@@ -27,11 +29,11 @@ public class ModuleCategory {
 
     @javax.persistence.Column(name = "MODULE_CATEGORY_NAME")
     @Basic
-    String getModuleCategoryName() {
+    public String getModuleCategoryName() {
         return moduleCategoryName;
     }
 
-    void setModuleCategoryName(String moduleCategoryName) {
+    public void setModuleCategoryName(String moduleCategoryName) {
         this.moduleCategoryName = moduleCategoryName;
     }
 
@@ -39,11 +41,11 @@ public class ModuleCategory {
 
     @javax.persistence.Column(name = "ORDER_KEY")
     @Basic
-    int getOrderKey() {
+    public int getOrderKey() {
         return orderKey;
     }
 
-    void setOrderKey(int orderKey) {
+    public void setOrderKey(int orderKey) {
         this.orderKey = orderKey;
     }
 
