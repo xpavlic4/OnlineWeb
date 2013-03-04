@@ -5,7 +5,34 @@
         <class>com.focusmr.online.onlineweb.model.App</class>
         <class>com.focusmr.online.onlineweb.model.Country</class>
         <class>com.focusmr.online.onlineweb.model.Param</class>
+        <class>com.focusmr.online.onlineweb.model.TreemasterAgtree</class>
         <class>com.focusmr.online.onlineweb.model.UserTable</class>
+        <class>com.focusmr.online.onlineweb.model.AgtreeLvlDef</class>
+        <class>com.focusmr.online.onlineweb.model.TreemasterAgtree</class>
+        <class>com.focusmr.online.onlineweb.model.DayTable</class>
+        <class>com.focusmr.online.onlineweb.model.Frequency</class>
+        <class>com.focusmr.online.onlineweb.model.GavType</class>
+        <class>com.focusmr.online.onlineweb.model.GlobalAccountRingType</class>
+        <class>com.focusmr.online.onlineweb.model.GlobalCorporation</class>
+        <class>com.focusmr.online.onlineweb.model.GlobalCustomCodeTypes</class>
+        <class>com.focusmr.online.onlineweb.model.GlobalGavCategory</class>
+        <class>com.focusmr.online.onlineweb.model.GlobalKeyAccount</class>
+        <class>com.focusmr.online.onlineweb.model.GlobalPackagingCycle</class>
+        <class>com.focusmr.online.onlineweb.model.GlobalPackagingForm</class>
+        <class>com.focusmr.online.onlineweb.model.GlobalPackagingMaterial</class>
+        <class>com.focusmr.online.onlineweb.model.GlobalTcSet</class>
+        <class>com.focusmr.online.onlineweb.model.GroupTable</class>
+        <class>com.focusmr.online.onlineweb.model.Locale</class>
+        <class>com.focusmr.online.onlineweb.model.LocaleVariation</class>
+        <class>com.focusmr.online.onlineweb.model.LogType</class>
+        <class>com.focusmr.online.onlineweb.model.MailerType</class>
+        <class>com.focusmr.online.onlineweb.model.MediaFormat</class>
+        <class>com.focusmr.online.onlineweb.model.MediaType</class>
+        <class>com.focusmr.online.onlineweb.model.Module</class>
+        <class>com.focusmr.online.onlineweb.model.ModuleCategory</class>
+        <class>com.focusmr.online.onlineweb.model.ParamGroup</class>
+        <class>com.focusmr.online.onlineweb.model.RelevantsetNodeType</class>
+        <class>com.focusmr.online.onlineweb.model.ResourceTable</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <!-- Properties for Hibernate -->
