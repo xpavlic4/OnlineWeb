@@ -1,9 +1,6 @@
 package com.focusmr.online.onlineweb.rest.api;
 
-import com.focusmr.online.onlineweb.model.App;
-import com.focusmr.online.onlineweb.model.Country;
-import com.focusmr.online.onlineweb.model.Param;
-import com.focusmr.online.onlineweb.model.UserTable;
+import com.focusmr.online.onlineweb.model.*;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -97,4 +94,114 @@ public interface TableResourceRESTService {
     @Path("/usertable/{id}")
     @Produces(MediaType.TEXT_XML)
     UserTable listUsertableById(@PathParam("id") Integer id);
+
+    @GET
+    @Path("/agtreelvldef")
+    @Produces(MediaType.TEXT_XML)
+    List<AgtreeLvlDef> listAllAgtreelvldef();
+
+    @GET
+    @Path("/daytable")
+    @Produces(MediaType.TEXT_XML)
+    List<DayTable> listAllDayTable();
+
+    @GET
+    @Path("/frequency")
+    @Produces(MediaType.TEXT_XML)
+    List<Frequency> listAllFrequency();
+
+    @GET
+    @Path("/gavtype")
+    @Produces(MediaType.TEXT_XML)
+    List<GavType> listAllGavType();
+
+    @GET
+    @Path("/GlobalAccountRingType")
+    @Produces(MediaType.TEXT_XML)
+    List<GlobalAccountRingType> listAllGlobalAccountRingType();
+
+    @GET
+    @Path("/GlobalCorporation")
+    @Produces(MediaType.TEXT_XML)
+    List<GlobalCorporation> listAllGlobalCorporation();
+
+    @GET
+    @Path("/GlobalCorporation")
+    @Produces(MediaType.TEXT_XML)
+    List<GlobalCustomCodeTypes> listAllGlobalCustomCodeTypes();
+
+    @GET
+    @Path("/GlobalGavCategory")
+    @Produces(MediaType.TEXT_XML)
+    List<GlobalGavCategory> listAllglobalGavCategoryId();
+
+    @GET
+    @Path("/GlobalKeyAccount")
+    @Produces(MediaType.TEXT_XML)
+    List<GlobalKeyAccount> listAllGlobalKeyAccount();
+
+    @GET
+    @Path("/GlobalPackagingCycle")
+    @Produces(MediaType.TEXT_XML)
+    List<GlobalPackagingCycle> listAllGlobalPackagingCycle();
+
+    @GET
+    @Path("/GlobalPackagingForm")
+    @Produces(MediaType.TEXT_XML)
+    List<GlobalPackagingForm> listAllGlobalPackagingForm();
+
+    @GET
+    @Path("/GlobalPackagingMaterial")
+    @Produces(MediaType.TEXT_XML)
+    List<GlobalPackagingMaterial> listAllGlobalPackagingMaterial();
+
+    @GET
+    @Path("/GlobalTcSet")
+    @Produces(MediaType.TEXT_XML)
+    List<GlobalTcSet> listAllGlobalTcSet();
+
+    @GET
+    @Path("/GroupTable")
+    @Produces(MediaType.TEXT_XML)
+    List<GroupTable> listAllGroupTable();
+
+    @GET
+    @Path("/Locale")
+    @Produces(MediaType.TEXT_XML)
+    List<Locale> listAllLocale();
+
+    @GET
+    @Path("/LocaleVariation")
+    @Produces(MediaType.TEXT_XML)
+    List<LocaleVariation> listAllLLocaleVariation();
+
+    @GET
+    @Path("/LogType")
+    @Produces(MediaType.TEXT_XML)
+    List<LogType> listAllLLLogType();
+
+    @GET
+    @Path("/MailerType")
+    @Produces(MediaType.TEXT_XML)
+    List<MailerType> listAllMailerType();
+
+    @GET
+    @Path("/Module")
+    @Produces(MediaType.TEXT_XML)
+    List<Module> listAllModule();
+
+    @GET
+    @Path("/ModuleCategory")
+    @Produces(MediaType.TEXT_XML)
+    List<ModuleCategory> listAllModuleCategorye();
+
+    @GET
+    @Path("/ParamGroup")
+    @Produces(MediaType.TEXT_XML)
+    List<ParamGroup> listAllParamGroup();
+
+    @GET
+    @Path("/ResourceTable")
+    @Produces(MediaType.TEXT_XML)
+    List<ResourceTable> listAllResourceTable(@QueryParam("offset") int offset);
 }
