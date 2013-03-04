@@ -25,16 +25,16 @@ public class MailerType {
         this.mailerTypeId = mailerTypeId;
     }
 
-    private String mailerType;
+    private String type;
 
     @javax.persistence.Column(name = "MAILER_TYPE")
     @Basic
-    public String getMailerType() {
-        return mailerType;
+    public String getType() {
+        return type;
     }
 
-    public void setMailerType(String mailerType) {
-        this.mailerType = mailerType;
+    public void setType(String type) {
+        this.type = type;
     }
 
     private String displayName;
@@ -58,7 +58,7 @@ public class MailerType {
 
         if (mailerTypeId != that.mailerTypeId) return false;
         if (displayName != null ? !displayName.equals(that.displayName) : that.displayName != null) return false;
-        if (mailerType != null ? !mailerType.equals(that.mailerType) : that.mailerType != null) return false;
+        if (type != null ? !type.equals(that.type) : that.type != null) return false;
 
         return true;
     }
@@ -66,7 +66,7 @@ public class MailerType {
     @Override
     public int hashCode() {
         int result = mailerTypeId;
-        result = 31 * result + (mailerType != null ? mailerType.hashCode() : 0);
+        result = 31 * result + (type != null ? type.hashCode() : 0);
         result = 31 * result + (displayName != null ? displayName.hashCode() : 0);
         return result;
     }

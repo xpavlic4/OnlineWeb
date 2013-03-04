@@ -25,16 +25,16 @@ public class MediaFormat {
         this.mediaFormatId = mediaFormatId;
     }
 
-    private String mediaFormat;
+    private String format;
 
     @javax.persistence.Column(name = "MEDIA_FORMAT")
     @Basic
-    public String getMediaFormat() {
-        return mediaFormat;
+    public String getFormat() {
+        return format;
     }
 
-    public void setMediaFormat(String mediaFormat) {
-        this.mediaFormat = mediaFormat;
+    public void setFormat(String format) {
+        this.format = format;
     }
 
     @Override
@@ -45,7 +45,7 @@ public class MediaFormat {
         MediaFormat that = (MediaFormat) o;
 
         if (mediaFormatId != that.mediaFormatId) return false;
-        if (mediaFormat != null ? !mediaFormat.equals(that.mediaFormat) : that.mediaFormat != null) return false;
+        if (format != null ? !format.equals(that.format) : that.format != null) return false;
 
         return true;
     }
@@ -53,7 +53,7 @@ public class MediaFormat {
     @Override
     public int hashCode() {
         int result = mediaFormatId;
-        result = 31 * result + (mediaFormat != null ? mediaFormat.hashCode() : 0);
+        result = 31 * result + (format != null ? format.hashCode() : 0);
         return result;
     }
 }

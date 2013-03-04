@@ -25,16 +25,16 @@ public class GavType {
         this.typeId = typeId;
     }
 
-    private String gavType;
+    private String type;
 
     @javax.persistence.Column(name = "GAV_TYPE")
     @Basic
-    public String getGavType() {
-        return gavType;
+    public String getType() {
+        return type;
     }
 
-    public void setGavType(String gavType) {
-        this.gavType = gavType;
+    public void setType(String type) {
+        this.type = type;
     }
 
     @Override
@@ -45,7 +45,7 @@ public class GavType {
         GavType gavType1 = (GavType) o;
 
         if (typeId != gavType1.typeId) return false;
-        if (gavType != null ? !gavType.equals(gavType1.gavType) : gavType1.gavType != null) return false;
+        if (type != null ? !type.equals(gavType1.type) : gavType1.type != null) return false;
 
         return true;
     }
@@ -53,7 +53,7 @@ public class GavType {
     @Override
     public int hashCode() {
         int result = typeId;
-        result = 31 * result + (gavType != null ? gavType.hashCode() : 0);
+        result = 31 * result + (type != null ? type.hashCode() : 0);
         return result;
     }
 }

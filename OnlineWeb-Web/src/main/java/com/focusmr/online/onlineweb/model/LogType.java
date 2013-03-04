@@ -25,16 +25,16 @@ public class LogType {
         this.logTypeId = logTypeId;
     }
 
-    private String logType;
+    private String type;
 
     @javax.persistence.Column(name = "LOG_TYPE")
     @Basic
-    public String getLogType() {
-        return logType;
+    public String getType() {
+        return type;
     }
 
-    public void setLogType(String logType) {
-        this.logType = logType;
+    public void setType(String type) {
+        this.type = type;
     }
 
     @Override
@@ -45,7 +45,7 @@ public class LogType {
         LogType logType1 = (LogType) o;
 
         if (logTypeId != logType1.logTypeId) return false;
-        if (logType != null ? !logType.equals(logType1.logType) : logType1.logType != null) return false;
+        if (type != null ? !type.equals(logType1.type) : logType1.type != null) return false;
 
         return true;
     }
@@ -53,7 +53,7 @@ public class LogType {
     @Override
     public int hashCode() {
         int result = logTypeId;
-        result = 31 * result + (logType != null ? logType.hashCode() : 0);
+        result = 31 * result + (type != null ? type.hashCode() : 0);
         return result;
     }
 }

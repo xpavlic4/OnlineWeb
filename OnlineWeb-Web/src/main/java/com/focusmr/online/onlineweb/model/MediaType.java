@@ -25,16 +25,16 @@ public class MediaType {
         this.mediaTypeId = mediaTypeId;
     }
 
-    private String mediaType;
+    private String type;
 
     @javax.persistence.Column(name = "MEDIA_TYPE")
     @Basic
-    public String getMediaType() {
-        return mediaType;
+    public String getType() {
+        return type;
     }
 
-    public void setMediaType(String mediaType) {
-        this.mediaType = mediaType;
+    public void setType(String type) {
+        this.type = type;
     }
 
     @Override
@@ -45,7 +45,7 @@ public class MediaType {
         MediaType mediaType1 = (MediaType) o;
 
         if (mediaTypeId != mediaType1.mediaTypeId) return false;
-        if (mediaType != null ? !mediaType.equals(mediaType1.mediaType) : mediaType1.mediaType != null) return false;
+        if (type != null ? !type.equals(mediaType1.type) : mediaType1.type != null) return false;
 
         return true;
     }
@@ -53,7 +53,7 @@ public class MediaType {
     @Override
     public int hashCode() {
         int result = mediaTypeId;
-        result = 31 * result + (mediaType != null ? mediaType.hashCode() : 0);
+        result = 31 * result + (type != null ? type.hashCode() : 0);
         return result;
     }
 }
