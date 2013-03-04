@@ -25,7 +25,7 @@ public class TreemasterResourceRESTServiceImpl {
     private EntityManager em;
 
     @GET
-    @Path("/{agtreeId}}")
+    @Path("/{agtreeId}")
     @Produces({MediaType.TEXT_XML, MediaType.APPLICATION_JSON})
     public TreemasterAgtree evaluate(@PathParam("agtreeId") Integer agtreeId) throws SQLException, NamingException {
         final TypedQuery<TreemasterAgtree> namedQuery = em.createNamedQuery(TreemasterAgtree.BY_AGTREE_ID, TreemasterAgtree.class);
