@@ -38,6 +38,13 @@ public class ParamResolver {
         final Parameter parameter = new Parameter();
         parameter.setKey(o.getName());
         parameter.setValue(param.getValue().toString());
+        parameter.setApplicationId(param.getApplicationId());
+        parameter.setCountryId(param.getCountryId());
+        parameter.setMemoryOnly(param.getMemoryOnly());
+        parameter.setModify(param.getModify());
+        parameter.setOverrideInternational(param.getOverrideInternational());
+        parameter.setOverrideMaster(param.getOverrideMaster());
+        parameter.setUserId(param.getUserId());
         return parameter;
     }
 
