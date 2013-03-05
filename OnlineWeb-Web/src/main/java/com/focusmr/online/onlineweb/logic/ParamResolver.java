@@ -13,6 +13,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 import java.sql.SQLException;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Resolves value of given param.
@@ -22,6 +24,7 @@ public class ParamResolver {
     private final JavaConnectionFactory factory = new JavaConnectionFactory();
     @Inject
     EntityManager em;
+
 
     /**
      * Process params and find value of parameter.
@@ -36,8 +39,15 @@ public class ParamResolver {
         final PrefsBase prefsBase = new PrefsBase(o.getUserId(), masterId, o.getApplicatoinId(), o.getCountryId(), factory);
         final ReadParam param = prefsBase.getParam(o.getName());
         final Parameter parameter = new Parameter();
+
+        final List<Object> values = param.getValues();
+        if (null != values) {
+            parameter.setValue(Arrays.toString(values.toArray()));
+        } else {
+            parameter.setValue(String.valueOf(param.getValue()));
+        }
+
         parameter.setKey(o.getName());
-        parameter.setValue(String.valueOf(param.getValue()));
         parameter.setApplicationId(param.getApplicationId());
         parameter.setCountryId(param.getCountryId());
         parameter.setMemoryOnly(param.getMemoryOnly());
