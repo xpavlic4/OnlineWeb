@@ -42,7 +42,15 @@ public class ParamResolver {
 
         final List<Object> values = param.getValues();
         if (null != values && !values.isEmpty()) {
-            parameter.setValue(Arrays.toString(values.toArray()));
+            switch (values.size()) {
+                case 1:
+                    final Object next = values.iterator().next();
+                    parameter.setValue(next == null ? null : next.toString());
+                    break;
+                default:
+                    parameter.setValue(Arrays.toString(values.toArray()));
+            }
+
         } else {
             if (param.getValue() == null) {
                 parameter.setValue(null);
