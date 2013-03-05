@@ -1,5 +1,6 @@
 package com.focusmr.online.onlineweb.api;
 
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 
@@ -27,6 +28,7 @@ public class Parameter implements Serializable {
         this.key = key;
     }
 
+    @XmlElement(nillable = true)
     public String getValue() {
         return value;
     }
@@ -47,6 +49,7 @@ public class Parameter implements Serializable {
         this.countryId = countryId;
     }
 
+    @XmlElement(nillable = true)
     public Integer getCountryId() {
         return countryId;
     }
