@@ -41,10 +41,14 @@ public class ParamResolver {
         final Parameter parameter = new Parameter();
 
         final List<Object> values = param.getValues();
-        if (null != values) {
+        if (null != values && !values.isEmpty()) {
             parameter.setValue(Arrays.toString(values.toArray()));
         } else {
-            parameter.setValue(String.valueOf(param.getValue()));
+            if (param.getValue() == null) {
+                parameter.setValue(null);
+            } else {
+                parameter.setValue(param.getValue().toString());
+            }
         }
 
         parameter.setKey(o.getName());
