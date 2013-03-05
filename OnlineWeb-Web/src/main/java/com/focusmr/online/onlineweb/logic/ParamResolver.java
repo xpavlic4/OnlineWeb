@@ -37,7 +37,7 @@ public class ParamResolver {
         final ReadParam param = prefsBase.getParam(o.getName());
         final Parameter parameter = new Parameter();
         parameter.setKey(o.getName());
-        parameter.setValue(param.getValue().toString());
+        parameter.setValue(String.valueOf(param.getValue()));
         parameter.setApplicationId(param.getApplicationId());
         parameter.setCountryId(param.getCountryId());
         parameter.setMemoryOnly(param.getMemoryOnly());
