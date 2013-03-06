@@ -14,22 +14,22 @@ public class OnlineWebRestClient extends GenericRestClient {
         private int application;
         private String param;
 
-        Builder userId(int i) {
+        public Builder userId(int i) {
             this.userId = i;
             return this;
         }
 
-        Builder country(int i) {
+        public Builder country(int i) {
             this.country = i;
             return this;
         }
 
-        Builder application(int i) {
+        public Builder application(int i) {
             this.application = i;
             return this;
         }
 
-        Builder param(String param) {
+        public Builder param(String param) {
             this.param = param;
             return this;
         }
@@ -97,17 +97,17 @@ public class OnlineWebRestClient extends GenericRestClient {
     /**
      * users/1/apps/1/countries/1/params/locale
      *
-     * @return
+     * @return parameter filled with values from ws call
      */
     @SuppressWarnings("UnusedDeclaration")
     public Parameter resolveParam(Builder c) {
         Parameter xml;
         RequestBuilder rb = new RequestBuilder();
         final Context ctx = c.build();
-        StringBuffer sb = new StringBuffer("users/" + ctx.getUserId());
-        sb.append("/apps/" + ctx.getApplication());
-        sb.append("/countries/" + ctx.getCountry());
-        sb.append("/params/" + ctx.getParam());
+        StringBuilder sb = new StringBuilder("users/" + ctx.getUserId());
+        sb.append("/apps/").append(ctx.getApplication());
+        sb.append("/countries/").append(ctx.getCountry());
+        sb.append("/params/").append(ctx.getParam());
         rb.withURI(getUrl().toString() + sb.toString());
         rb.withMethod("GET");
         rb.withContentType("application/xml");
