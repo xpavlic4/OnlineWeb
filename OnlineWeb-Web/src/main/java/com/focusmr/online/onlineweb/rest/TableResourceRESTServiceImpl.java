@@ -35,7 +35,7 @@ public class TableResourceRESTServiceImpl implements TableResourceRESTService {
 
     @Override
     @GET
-    @Path("/aApppp/{id}")
+    @Path("/App/{id}")
     @Produces(MediaType.TEXT_XML)
     public App listAppById(@PathParam("id") Integer id) {
         final TypedQuery<App> namedQuery = em.createNamedQuery(App.BY_ID, App.class);
