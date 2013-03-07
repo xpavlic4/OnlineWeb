@@ -93,4 +93,19 @@ public class Parameter implements Serializable {
     public Integer getUserId() {
         return userId;
     }
+
+    @Override
+    public String toString() {
+        return "Parameter{" +
+                "key='" + key + '\'' +
+                ", value='" + value + '\'' +
+                ", applicationId=" + applicationId +
+                ", countryId=" + countryId +
+                ", memoryOnly=" + memoryOnly +
+                ", modify=" + modify +
+                ", overrideInternational=" + overrideInternational +
+                ", overrideMaster=" + overrideMaster +
+                ", userId=" + userId +
+                '}';
+    }
 }
