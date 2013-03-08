@@ -126,6 +126,29 @@ public class OnlineWebRestClient extends GenericRestClient {
     }
 
     /**
+     * Smoke test for webserice.
+     *
+     * @return current date of server string representation.
+     */
+    public String smokeTest() {
+        RequestBuilder rb = new RequestBuilder();
+        rb.withURI(getUrl().toString() + "/test");
+        rb.withMethod("GET");
+        rb.withContentType("text/plain");
+        Request r = rb.build();
+
+        Object execute;
+        try {
+            execute = execute(r);
+        } catch (Exception e) {
+            throw new OnlineWebException(e);
+        }
+
+        return (String) execute;
+    }
+
+
+    /**
      * Gets root url.
      *
      * @return root url.

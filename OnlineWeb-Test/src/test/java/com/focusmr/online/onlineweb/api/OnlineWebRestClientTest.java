@@ -42,4 +42,16 @@ public class OnlineWebRestClientTest {
         final Parameter parameter = client.resolveParam(b);
         assertTrue(!Strings.isNullOrEmpty(parameter.getValue()));
     }
+
+    @Test
+    //@Ignore should be ignored
+    public void shouldCallWebServiceSmokeTest() throws IOException {
+        final Properties properties = readProperties();
+        final OnlineWebRestClient client = new OnlineWebRestClient(URI.create(properties.getProperty(deployUrl)).toURL());
+
+        final String s = client.smokeTest();
+        assertTrue(!Strings.isNullOrEmpty(s));
+    }
+
+
 }
