@@ -7,7 +7,9 @@
     <parent>
         <groupId>com.focusmr</groupId>
         <artifactId>focusmr-parent</artifactId>
-        <version>0.0.2</version>
+        <version>0.0.4-SNAPSHOT</version>
+        <!--suppress CheckTagEmptyBody -->
+        <relativePath></relativePath>
     </parent>
     <groupId>com.focusmr.online</groupId>
     <artifactId>OnlineWeb-Api</artifactId>
