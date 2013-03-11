@@ -44,7 +44,7 @@ public class OnlineWebRestClientTest {
     }
 
     @Test
-    //@Ignore should be ignored
+    @Ignore("should be ignored")
     public void shouldCallWebServiceSmokeTest() throws IOException {
         final Properties properties = readProperties();
         final OnlineWebRestClient client = new OnlineWebRestClient(URI.create(properties.getProperty(deployUrl)).toURL());

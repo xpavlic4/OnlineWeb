@@ -104,7 +104,7 @@ public class OnlineWebRestClient extends GenericRestClient {
         Parameter xml;
         RequestBuilder rb = new RequestBuilder();
         final Context ctx = c.build();
-        StringBuilder sb = new StringBuilder("users/" + ctx.getUserId());
+        StringBuilder sb = new StringBuilder("/users/" + ctx.getUserId());
         sb.append("/apps/").append(ctx.getApplication());
         sb.append("/countries/").append(ctx.getCountry());
         sb.append("/params/").append(ctx.getParam());
