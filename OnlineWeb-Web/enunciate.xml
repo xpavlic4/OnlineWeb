@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <enunciate label="wannabecool" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xsi:noNamespaceSchemaLocation="http://enunciate.codehaus.org/schemas/enunciate-1.26.xsd">
-           <services>
-    <rest defaultRestSubcontext="/rest/version1"/>
-  </services>
+    <services>
+        <rest defaultRestSubcontext="/rest/version1"/>
+    </services>
     <modules>
         <!-- Docs -->
         <docs docsDir="docs" splashPackage="com.focusmr.online.onlineweb" title="OnlineWeb"
