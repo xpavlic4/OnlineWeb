@@ -60,7 +60,7 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>29.0-jre</version>
+            <version>[30.0-jre,)</version>
         </dependency>
         <!-- First declare the APIs we depend on and need for compilation.
             All of them are provided by JBoss AS 7 -->
